@@ -1,0 +1,34 @@
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+mainClassName = "wdsr.exercise4.PersistenceProducer"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    activemqVersion = '5.13.2'
+	log4jVersion = '2.5'
+	
+	libraries = [
+        activemqCore: [
+                "org.apache.activemq:activemq-broker:${activemqVersion}",
+        ],
+		
+        log4j: [
+                "org.apache.logging.log4j:log4j-api:${log4jVersion}",
+                "org.apache.logging.log4j:log4j-core:${log4jVersion}",
+                "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
+        ]
+	]
+}
+
+dependencies {
+    compile "javax:javaee-api:7.0"
+    compile libraries.log4j
+    compile group: 'org.apache.activemq', name: 'activemq-pool', version: '5.14.5'
+    testCompile libraries.activemqCore
+}
