@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>jms_persistence_consumer</name>
-	<comment>Project jms_persistence_consumer created by Buildship.</comment>
+	<name>jms_persistence_subscriber</name>
+	<comment>Project jms_persistence_subscriber created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
